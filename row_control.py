@@ -2,11 +2,18 @@ import flet as ft
 import time
 
 def main(page: ft.Page):
-    for i in range(10):
-        page.controls.append(ft.Text(value=f"Text number {i}"))
-        if i>4:
-            page.controls.pop(0)
-        page.update()
-        time.sleep(1)
+    page.add(ft.Row(
+        controls=[
+            ft.Text(value="12"),
+            ft.Text(value="123")
+        ]
+    ))
+    page.update()
+    time.sleep(2)
+    page.add(ft.Row(controls=[
+        ft.TextField(label="Como te llamas?"),
+        ft.ElevatedButton(text="Pronounce name")
+    ]))
+    page.update()
 
 ft.app(target=main)
