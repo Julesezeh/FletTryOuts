@@ -8,9 +8,18 @@ def main(page: ft.Page):
 
     def event_handler(e):
         greetings.controls.append(
-            ft.Text(f"Hello {first_name.value} of house {last_name.value}")
+            ft.Text(f"Hello {first_name.current.value} of house {last_name.current.value}")
         )
+        first_name.current.value = ""
+        last_name.current.value = ""
+        page.update()
+        first_name.current.focus()
 
-    pass
 
+    page.add(
+        ft.TextField(ref=first_name,label="First Name", autofocus=True),
+        ft.TextField(ref=last_name,label="Last Name", autofocus=True),
+        ft.ElevatedButton("Say Hello!",on_click=event_handler),
+        ft.Column(ref=greetings),
+    )
 ft.app(target=main, view=ft.WEB_BROWSER)
