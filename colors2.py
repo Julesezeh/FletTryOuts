@@ -1,14 +1,15 @@
 import flet as ft
 
-def main(page: ft.Page):          
-    
-    container = ft.Container(
-        width=200,
-        height=200,
-        # border=ft.border.all(1, ft.colors.BLACK),
-        content=ft.FilledButton("Primary color"),
-        theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.colors.YELLOW)))
-    
-    page.add(container)
+def main(page: ft.Page):
 
-ft.app(target=main)   
+    page.add(
+        ft.Container(
+            width=300,
+            height=300,
+            border= ft.border.all(1,ft.colors.GREEN_200),
+            content= ft.FilledButton("Primary Color"),
+            theme=ft.Theme(color_scheme=ft.ColorScheme(primary=ft.colors.GREEN_300))
+        )
+    )
+
+ft.app(target=main)
