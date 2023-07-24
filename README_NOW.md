@@ -1,0 +1,1 @@
+Test ListView, Grid View and batch updates again
